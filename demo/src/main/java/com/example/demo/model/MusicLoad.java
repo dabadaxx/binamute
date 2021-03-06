@@ -15,17 +15,25 @@ import javax.persistence.Table;
 
 public class MusicLoad {
 	
+	public MusicLoad( String title, String author, String genre) {
+		
+		
+		this.title = title;
+		this.author = author;
+		this.genre = genre;
+	}
+
 	@Override
 	public String toString() {
-		return "Entity [id=" + id + ", music=" + music + ", title=" + title + ", author=" + author + "]";
+		return "Entity [id=" + id + ", genre=" + genre + ", title=" + title + ", author=" + author + "]";
 	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column(name = "music")
-	private String music;
+	@Column(name = "genre")
+	private String genre;
 
 	@Column(name = "title")
 	private String title;
@@ -41,12 +49,12 @@ public class MusicLoad {
 		this.id = id;
 	}
 
-	public String getMusic() {
-		return music;
+	public String getGenre() {
+		return genre;
 	}
 
-	public void setMusic(String music) {
-		this.music = music;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 	public String getTitle() {
